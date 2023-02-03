@@ -12,30 +12,37 @@ export default function Sectors() {
     {
       title: "Real Estate Development",
       img: "bg-sec1",
+      url: "/sectors/realestate",
     },
     {
       title: "Education",
       img: "bg-sec2",
+      url: "/sectors/edu",
     },
     {
       title: "Hospitality",
       img: "bg-sec3",
+      url: "/sectors/hosp",
     },
     {
       title: "Banking",
       img: "bg-sec4",
+      url: "/sectors/bank",
     },
     {
       title: "Industrial Development",
       img: "bg-sec5",
+      url: "/sectors/dev",
     },
     {
       title: "Agriculture",
       img: "bg-sec6",
+      url: "/sectors/agri",
     },
     {
       title: "Green Energy",
       img: "bg-sec7",
+      url: "/sectors/green",
     },
   ];
 
@@ -71,7 +78,7 @@ export default function Sectors() {
             >
               {list.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <Link href="">
+                  <Link href={item.url}>
                     <div
                       className={
                         "h-96 md:h-80 bg-cover w-full mb-5 " + item.img
