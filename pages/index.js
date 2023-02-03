@@ -7,7 +7,8 @@ import WhatWeDo from "./homepage/WhatWeDo";
 import Sectors from "./homepage/HomeSectors";
 import Team from "./homepage/HomeTeam";
 import Footer from "@/components/Footer";
-import { Scrollbar } from "smooth-scrollbar-react";
+import Layout from "../Layout/index";
+import Loader from "@/Layout/Loader";
 
 export default function Home() {
   return (
@@ -21,10 +22,12 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         <Hero first={"Seizing Currents,"} sec={"Securing Futures."} />
-        <About />
-        <WhatWeDo />
-        <Sectors />
-        <Team />
+        <Layout>
+          <About />
+          <WhatWeDo />
+          <Sectors />
+          <Team />
+        </Layout>
         <Footer />
       </main>
     </>
