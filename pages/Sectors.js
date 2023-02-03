@@ -57,7 +57,7 @@ export default function Sectors() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-10">
                 {list.map((item, index) => (
                   <Link href={item.url} key={index}>
-                    <div className="hover:opacity-70 transition ease-in-out">
+                    <div className="hover:opacity-70 transition ease-in-out mb-5">
                       <Image
                         loader={ImageLoader}
                         alt="The Group"
@@ -66,7 +66,7 @@ export default function Sectors() {
                         height={400}
                       />
                     </div>
-                    <div className="text-3xl font-extrabold text-kown-p mb-5">
+                    <div className="text-3xl font-extrabold text-kown-p mb-10">
                       {item.title}
                     </div>
                   </Link>
