@@ -4,7 +4,7 @@ import Link from "next/link";
 import "swiper/css";
 
 const imageLoader = ({ src, width, quality }) => {
-  return `http://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
+  return `https://kown-group.vercel.app/${src}?w=${width}&q=${quality || 75}`;
 };
 
 export default function Sectors() {
