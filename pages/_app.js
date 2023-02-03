@@ -1,18 +1,13 @@
 import "@/styles/globals.css";
-import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import PageLoader from "../Layout/Loader";
 
-const theme = createTheme({
-  type: "dark",
-});
-
 export default function App({ Component, pageProps, router }) {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    // Used for page transition
     const start = () => {
       setLoading(true);
     };
@@ -35,7 +30,7 @@ export default function App({ Component, pageProps, router }) {
       initial={false}
       onExitComplete={() => window.scrollTo(0, 0)}
     >
-      <NextUIProvider theme={theme}>
+      <NextUIProvider>
         {loading ? <PageLoader /> : <Component {...pageProps} />}
       </NextUIProvider>
     </AnimatePresence>

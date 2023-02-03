@@ -1,43 +1,23 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Hero from "../homepage/Hero";
+import Hero from "../../components/Hero";
 import Link from "next/link";
+import BackHome from "@/components/BackHome";
 import Layout from "@/Layout";
 
 export default function FrequentlyAskedQuestions() {
   return (
     <>
       <Header />
-      <Hero first={"Frequently Asked"} sec={"Questions"} />
+      <BackHome />
+      <Hero
+        first={"Frequently Asked"}
+        sec={"Questions"}
+        img={"bg-hero-image2"}
+      />
       <Layout>
         <div className="md:mb-20">
           <div className="container m-auto px-5 md:px-12 xl:px-40">
-            <div className="w-full mb-10">
-              <div className="text-kown-p flex items-center">
-                <div className="w-3 h-3 mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-3 h-3"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </div>
-                <Link
-                  className="text-sm text-kown-s hover:text-kown-p-600 pb-1"
-                  href={"/"}
-                >
-                  Home
-                </Link>
-              </div>
-            </div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             condimentum scelerisque metus hendrerit volutpat. Nullam id urna ac
             dolor posuere egestas. In neque massa, hendrerit quis nulla a,

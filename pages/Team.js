@@ -3,12 +3,10 @@ import Header from "@/components/Header";
 import Layout from "@/Layout";
 import Image from "next/image";
 import Link from "next/link";
+import ImageLoader from "@/helpers/ImageLoader";
+import BackHome from "@/components/BackHome";
 
 import "swiper/css";
-
-const imageLoader = ({ src, width, quality }) => {
-  return `https://kown-group.vercel.app/${src}?w=${width}&q=${quality || 75}`;
-};
 
 export default function Team() {
   const list = [
@@ -19,7 +17,7 @@ export default function Team() {
       desc: "Samer joined Kown Capital in April 2022 as its Group Chief Executive Officer (GCEO), after completing more than 5 years as the GCEO of Estithmar (QPSC).",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -31,7 +29,7 @@ export default function Team() {
       desc: "Rami joined Kown Capital in August 2022 as a Director of Operation and Real Estate Development following his role as the General Manager of Debbas Enterprise Qatar...",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -43,7 +41,7 @@ export default function Team() {
       desc: "Rami joined Kown Capital in August 2022 as a Director of Operation and Real Estate Development following his role as the General Manager of Debbas Enterprise Qatar...",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -55,7 +53,7 @@ export default function Team() {
       desc: "Rami joined Kown Capital in August 2022 as a Director of Operation and Real Estate Development following his role as the General Manager of Debbas Enterprise Qatar...",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -67,7 +65,7 @@ export default function Team() {
       desc: "Rami joined Kown Capital in August 2022 as a Director of Operation and Real Estate Development following his role as the General Manager of Debbas Enterprise Qatar...",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -79,7 +77,7 @@ export default function Team() {
       desc: "Rami joined Kown Capital in August 2022 as a Director of Operation and Real Estate Development following his role as the General Manager of Debbas Enterprise Qatar...",
     },
     {
-      name: "Shadi Qestha",
+      name: "Shadi Qishta",
       title: "Group Chief Financial Officer",
       img: "images/team/2.png",
       desc: "Shadi joined Kown Capital in July 2022 as its Group Chief Financial Officer (GCFO) after being the CEO of Al Alttiyah Group.",
@@ -88,36 +86,11 @@ export default function Team() {
 
   return (
     <>
-      <Header />
+      <Header active={"team"} />
+      <BackHome />
       <Layout>
         <div id="team">
           <div className="container m-auto py-12 pb-0 px-5 md:px-12 xl:px-40 mb-10 md:mb-40 ">
-            <div className="w-full mb-10">
-              <div className="text-kown-p flex items-center">
-                <div className="w-3 h-3 mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-3 h-3"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </div>
-                <Link
-                  className="text-sm text-kown-s hover:text-kown-p-600 pb-1"
-                  href={"/"}
-                >
-                  Home
-                </Link>
-              </div>
-            </div>
             <h1 className="title text-7xl font-extrabold font-extrabol text-kown-p pb-20">
               The Team
             </h1>
@@ -126,7 +99,7 @@ export default function Team() {
                 <div key={index}>
                   <div className="w-full h-team relative xl:h-96 mb-5 ">
                     <Image
-                      loader={imageLoader}
+                      loader={ImageLoader}
                       alt={item.name}
                       src={item.img}
                       fill

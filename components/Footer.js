@@ -6,7 +6,7 @@ export default function Footer() {
       <footer className="bg-kown-p ">
         <div className="container mx-auto py-20 px-5 md:px-12 xl:px-40">
           <div className="flex flex-row justify-between items-center">
-            <div className="flex-row justify-between hidden md:flex">
+            <div className="flex-row justify-between hidden md:flex footerlists">
               <ul className="mr-20 list-disc">
                 <li>
                   <Link
@@ -56,14 +56,6 @@ export default function Footer() {
                     href={"/pages/Cookies"}
                   >
                     Cookies Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-lg text-kown-p-500 hover:text-kown-p-600"
-                    href={"/pages/FrequentlyAskedQuestions"}
-                  >
-                    FAQ
                   </Link>
                 </li>
               </ul>
@@ -140,7 +132,7 @@ export default function Footer() {
         </div>
         <div className="container mx-auto pb-20 px-5 md:px-12 xl:px-40">
           <div className="block text-center md:flex md:text-left flex-row justify-between items-center text-kown-p-500">
-            <div className="text-sm">Copyrights ®2023 KOWN</div>
+            <div className="text-sm">Copyrights ®2023 KOWN Holding</div>
             <div className="text-sm">
               Created by <Link href="https://id8media.com">ID8 Media</Link>
             </div>

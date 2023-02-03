@@ -35,7 +35,8 @@ module.exports = {
         500: "32rem",
       },
       backgroundImage: {
-        "hero-image": "url('../public/images/hero.jpg')",
+        "hero-image": "url('../public/images/hero03.jpg')",
+        "hero-image2": "url('../public/images/Us.jpg')",
         "pattren-image": "url('../public/images/pattren.svg')",
         sec1: "url('../public/images/sectors/1.png')",
         sec2: "url('../public/images/sectors/2.png')",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
-export default function Header() {
+export default function Header(props) {
   const [menu, setMenu] = useState(false);
   const showMenu = () => setMenu(true);
   const hideMenu = () => setMenu(false);
@@ -10,11 +10,10 @@ export default function Header() {
   return (
     <>
       <Head>
-        <title>KOWN Group</title>
+        <title>KOWN Holding</title>
         <meta
           name="description"
-          content="to leverage on the thriving regional and international markets
-                and build on unique possibilities."
+          content="Kown Capital was founded in 2022 in Doha, Qatar, with one goal in mind: to leverage on the thriving regional and international markets and build on unique possibilities."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -44,7 +43,7 @@ export default function Header() {
               <li className="transition ease-in-out hover:translate-x-5">
                 <Link
                   href={"/"}
-                  className="text-6xl hover:text-kown-s block duration-100 font-extrabold"
+                  className="text-6xl text-white hover:text-kown-s block duration-100 font-extrabold"
                 >
                   Home
                 </Link>
@@ -52,7 +51,7 @@ export default function Header() {
               <li className="transition ease-in-out hover:translate-x-5">
                 <Link
                   href={"/About"}
-                  className="text-6xl hover:text-kown-s block duration-100 font-extrabold"
+                  className="text-6xl text-white hover:text-kown-s block duration-100 font-extrabold"
                 >
                   Group
                 </Link>
@@ -60,7 +59,7 @@ export default function Header() {
               <li className="transition ease-in-out hover:translate-x-5">
                 <Link
                   href={"/Sectors"}
-                  className="text-6xl hover:text-kown-s block duration-100 font-extrabold"
+                  className="text-6xl text-white hover:text-kown-s block duration-100 font-extrabold"
                 >
                   Sectors
                 </Link>
@@ -68,7 +67,7 @@ export default function Header() {
               <li className="transition ease-in-out hover:translate-x-5">
                 <Link
                   href={"/Team"}
-                  className="text-6xl hover:text-kown-s block duration-100 font-extrabold"
+                  className="text-6xl text-white hover:text-kown-s block duration-100 font-extrabold"
                 >
                   Team
                 </Link>
@@ -76,7 +75,7 @@ export default function Header() {
               <li className="transition ease-in-out hover:translate-x-5">
                 <Link
                   href={"/Contact"}
-                  className="text-6xl hover:text-kown-s block duration-100 font-extrabold"
+                  className="text-6xl text-white hover:text-kown-s block duration-100 font-extrabold"
                 >
                   Contact
                 </Link>
@@ -103,44 +102,55 @@ export default function Header() {
               </svg>
             </Link>
           </div>
-          <div className="hidden md:flex">
-            <ul className="flex flex-row">
-              <li className="px-5">
-                <Link
-                  href={"/About"}
-                  className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
-                >
-                  Group
-                </Link>
-              </li>
-              <li className="px-5">
-                <Link
-                  href={"/Sectors"}
-                  className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
-                >
-                  Sectors
-                </Link>
-              </li>
-              <li className="px-5">
-                <Link
-                  href={"/Team"}
-                  className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
-                >
-                  Team
-                </Link>
-              </li>
-              <li className="px-5">
-                <Link
-                  href={"/Contact"}
-                  className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+
           <div className="flex flex-row justify-between items-center">
-            <div className="px-1 hidden md:block">
+            <div className="hidden md:flex">
+              <ul className="flex flex-row">
+                <li className="px-5">
+                  <Link
+                    href={"/About"}
+                    style={props.active === "group" ? { color: "#d79650" } : {}}
+                    className={
+                      "block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
+                    }
+                  >
+                    Group
+                  </Link>
+                </li>
+                <li className="px-5">
+                  <Link
+                    href={"/Sectors"}
+                    style={
+                      props.active == "sectors" ? { color: "#d79650" } : {}
+                    }
+                    className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
+                  >
+                    Sectors
+                  </Link>
+                </li>
+                <li className="px-5">
+                  <Link
+                    href={"/Team"}
+                    style={props.active == "team" ? { color: "#d79650" } : {}}
+                    className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
+                  >
+                    Team
+                  </Link>
+                </li>
+                <li className="px-5">
+                  <Link
+                    href={"/Contact"}
+                    style={
+                      props.active == "contact" ? { color: "#d79650" } : {}
+                    }
+                    className="block text-lg text-kown-p-700 hover:text-kown-s transition ease-in-out hover:scale-110 duration-100"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* <div className="px-1 hidden md:block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -149,7 +159,7 @@ export default function Header() {
               >
                 <path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
               </svg>
-            </div>
+            </div> */}
 
             <div className="px-1 block md:hidden" onClick={showMenu}>
               <svg

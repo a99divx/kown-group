@@ -2,10 +2,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Layout from "@/Layout";
 import Image from "next/image";
+import BackHome from "@/components/BackHome";
 import Link from "next/link";
-const imageLoader = ({ src, width, quality }) => {
-  return `https://kown-group.vercel.app/${src}?w=${width}&q=${quality || 75}`;
-};
+import ImageLoader from "@/helpers/ImageLoader";
 const list = [
   {
     title: "Real Estate Development",
@@ -46,37 +45,11 @@ const list = [
 export default function Sectors() {
   return (
     <>
-      <Header />
+      <Header active={"sectors"} />
+      <BackHome />
       <Layout>
         <div id="sectors" className="md:mb-20">
           <div className="container m-auto py-12 pb-0 px-5 md:px-12 xl:px-40 ">
-            <div className="w-full mb-10">
-              <div className="text-kown-p flex items-center">
-                <div className="w-3 h-3 mr-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-3 h-3"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </div>
-                <Link
-                  className="text-sm text-kown-s hover:text-kown-p-600 pb-1"
-                  href={"/"}
-                >
-                  Home
-                </Link>
-              </div>
-            </div>
-
             <div className="mb-20">
               <h1 className="title text-7xl font-extrabold font-extrabol text-kown-p pb-20">
                 Sectors
@@ -86,7 +59,7 @@ export default function Sectors() {
                   <Link href={item.url} key={index}>
                     <div className="hover:opacity-70 transition ease-in-out">
                       <Image
-                        loader={imageLoader}
+                        loader={ImageLoader}
                         alt="The Group"
                         src={"/images/sectors/" + item.img}
                         width={400}
